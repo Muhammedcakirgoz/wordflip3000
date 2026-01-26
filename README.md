@@ -55,11 +55,20 @@
 ## 📱 Ekran Görüntüleri
 
 <div align="center">
-  <img src="screenshots/screenshot-1.png" width="200" alt="Ana Menü"/>
-  <img src="screenshots/screenshot-2.png" width="200" alt="Kelime Kartları"/>
-  <img src="screenshots/screenshot-3.png" width="200" alt="İlerleme"/>
-  <img src="screenshots/screenshot-4.png" width="200" alt="Seviye Seçimi"/>
+  <img src="screenshots/screenshot-1-main-menu.png" width="200" alt="Ana Menü - WordFlip 3000"/>
+  <img src="screenshots/screenshot-2-word-card.png" width="200" alt="Kelime Kartları - Öğrenme"/>
+  <img src="screenshots/screenshot-3-progress.png" width="200" alt="İlerleme Durumu"/>
+  <img src="screenshots/screenshot-4-level-selection.png" width="200" alt="Seviye Seçimi (A1-C1)"/>
+  <img src="screenshots/screenshot-5-translate.png" width="200" alt="Çeviri Özelliği"/>
 </div>
+
+### Uygulama Özellikleri Görsel Olarak:
+
+1. **Ana Menü** - Modern ve kullanıcı dostu arayüz
+2. **Kelime Kartları** - İnteraktif öğrenme deneyimi
+3. **İlerleme Takibi** - Detaylı istatistikler
+4. **Seviye Sistemi** - A1'den C1'e 5 farklı seviye
+5. **Çeviri** - Offline çeviri özelliği
 
 ---
 

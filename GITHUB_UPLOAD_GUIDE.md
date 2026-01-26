@@ -252,29 +252,18 @@ chore:    Genel bakım (dependencies, vb.)
 
 ## 📸 Ekran Görüntüleri Klasörü
 
-GitHub'da güzel görünsün diye:
-
-### Klasör Oluştur
-
-```bash
-mkdir screenshots
-```
-
-### Screenshot'ları Kopyala
+✅ **HAZIR!** Ekran görüntüleri zaten `screenshots/` klasöründe:
 
 ```
-wordflip-store-assets/screenshot-1.png → screenshots/screenshot-1.png
-wordflip-store-assets/screenshot-2.png → screenshots/screenshot-2.png
-...
+screenshots/
+├── screenshot-1-main-menu.png        ✅ Ana Menü
+├── screenshot-2-word-card.png        ✅ Kelime Kartları
+├── screenshot-3-progress.png         ✅ İlerleme
+├── screenshot-4-level-selection.png  ✅ Seviye Seçimi
+└── screenshot-5-translate.png        ✅ Çeviri
 ```
 
-### Commit ve Push
-
-```bash
-git add screenshots/
-git commit -m "docs: Ekran görüntüleri eklendi"
-git push
-```
+Bu dosyalar GitHub'a yüklendikten sonra README.md'de otomatik görünecek!
 
 ---
 
