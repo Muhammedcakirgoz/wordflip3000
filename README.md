@@ -267,9 +267,9 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICE
 
 ## 📞 İletişim
 
-- **Geliştirici**: [Adınız]
-- **E-posta**: [E-postanız]
-- **GitHub**: [@kullanici-adiniz](https://github.com/kullanici-adiniz)
+- **Geliştirici**: Muhammed Çakırgöz
+- **E-posta**: muhammedcakirgoz00@gmail.com
+- **GitHub**: https://github.com/Muhammedcakirgoz
 
 ---
 
