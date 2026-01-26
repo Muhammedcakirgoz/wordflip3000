@@ -1,0 +1,61 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="512" cy="512" r="512" fill="url(#bgGradient)"/>
+  
+  <!-- Book Base -->
+  <g filter="url(#shadow)">
+    <!-- Left Page -->
+    <path d="M 280 350 Q 280 320 310 320 L 490 320 L 490 700 L 310 700 Q 280 700 280 670 Z" 
+          fill="#ffffff" opacity="0.95"/>
+    <!-- Right Page -->
+    <path d="M 534 320 L 714 320 Q 744 320 744 350 L 744 670 Q 744 700 714 700 L 534 700 Z" 
+          fill="#ffffff" opacity="0.95"/>
+    <!-- Spine -->
+    <rect x="490" y="320" width="44" height="380" fill="#f0f0f0"/>
+    <!-- Center Line -->
+    <line x1="512" y1="320" x2="512" y2="700" stroke="#e0e0e0" stroke-width="2"/>
+  </g>
+  
+  <!-- Text on Left Page -->
+  <text x="385" y="480" font-family="Arial, sans-serif" font-size="72" font-weight="bold" 
+        fill="#667eea" text-anchor="middle">EN</text>
+  
+  <!-- Text on Right Page -->
+  <text x="639" y="480" font-family="Arial, sans-serif" font-size="72" font-weight="bold" 
+        fill="#764ba2" text-anchor="middle">TR</text>
+  
+  <!-- Star 1 (Top Right) -->
+  <g transform="translate(680, 280)">
+    <path d="M 0,-30 L 8,-8 L 32,-8 L 12,6 L 20,28 L 0,12 L -20,28 L -12,6 L -32,-8 L -8,-8 Z" 
+          fill="#ffd700" opacity="0.9"/>
+  </g>
+  
+  <!-- Star 2 (Top Left, smaller) -->
+  <g transform="translate(320, 300) scale(0.6)">
+    <path d="M 0,-30 L 8,-8 L 32,-8 L 12,6 L 20,28 L 0,12 L -20,28 L -12,6 L -32,-8 L -8,-8 Z" 
+          fill="#ffd700" opacity="0.8"/>
+  </g>
+  
+  <!-- Star 3 (Bottom Right, smaller) -->
+  <g transform="translate(700, 640) scale(0.5)">
+    <path d="M 0,-30 L 8,-8 L 32,-8 L 12,6 L 20,28 L 0,12 L -20,28 L -12,6 L -32,-8 L -8,-8 Z" 
+          fill="#ffd700" opacity="0.7"/>
+  </g>
+  
+  <!-- Sparkle Effect -->
+  <circle cx="380" cy="380" r="4" fill="#ffffff" opacity="0.8"/>
+  <circle cx="640" cy="390" r="3" fill="#ffffff" opacity="0.8"/>
+  <circle cx="420" cy="600" r="5" fill="#ffffff" opacity="0.6"/>
+  <circle cx="600" cy="620" r="4" fill="#ffffff" opacity="0.6"/>
+</svg>

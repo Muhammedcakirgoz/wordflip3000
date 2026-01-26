@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Global shape + spacing helpers -->
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="button_corner">24dp</dimen>
+
+    <!-- Primary Filled Button -->
+    <style name="Widget.UygulamaProje.Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="cornerRadius">@dimen/button_corner</item>
+        <item name="backgroundTint">@color/button_primary</item>
+        <item name="rippleColor">@color/light_blue</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- Secondary Filled Button -->
+    <style name="Widget.UygulamaProje.Button.Secondary" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="cornerRadius">@dimen/button_corner</item>
+        <item name="backgroundTint">@color/button_secondary</item>
+        <item name="rippleColor">@color/light_blue</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- Success Filled Button -->
+    <style name="Widget.UygulamaProje.Button.Success" parent="Widget.Material3.Button">
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="cornerRadius">@dimen/button_corner</item>
+        <item name="backgroundTint">@color/button_success</item>
+        <item name="rippleColor">@color/light_blue</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!-- App Card style for consistent stroke and radius -->
+    <style name="Widget.UygulamaProje.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="strokeColor">@color/light_blue</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- Title / Subtitle text appearances -->
+    <style name="TextAppearance.UygulamaProje.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+
+    <style name="TextAppearance.UygulamaProje.Subtitle" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+
+</resources>
+
+

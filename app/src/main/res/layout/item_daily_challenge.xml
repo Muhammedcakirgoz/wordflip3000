@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardChallenge"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="6dp"
+    android:background="@drawable/card_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:gravity="center_vertical">
+
+        <!-- Challenge Icon/Status -->
+        <ImageView
+            android:id="@+id/ivChallengeStatus"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@android:drawable/checkbox_off_background"
+            android:layout_marginEnd="16dp" />
+
+        <!-- Challenge Content -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvChallengeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="📚 Günlük Kelime Hedefi"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/tvChallengeDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bugün 10 kelime öğren"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginTop="4dp" />
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/challengeProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="8dp"
+                android:progress="3"
+                android:max="10"
+                android:progressTint="@color/button_success" />
+
+            <!-- Progress Text -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:id="@+id/tvChallengeProgress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3 / 10"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary" />
+
+                <TextView
+                    android:id="@+id/tvChallengeReward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+50 XP, +10 💰"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/accent_orange"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView> 

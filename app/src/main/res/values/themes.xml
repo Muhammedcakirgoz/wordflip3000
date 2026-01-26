@@ -1,0 +1,25 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.UygulamaProje" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Light theme colors -->
+        <item name="colorPrimary">@color/primary_blue</item>
+        <item name="colorOnPrimary">@color/text_white</item>
+        <item name="colorSecondary">@color/accent_orange</item>
+        <item name="colorOnSecondary">@color/text_white</item>
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="colorSurface">@color/background_card</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+    </style>
+
+    <style name="Theme.UygulamaProje" parent="Base.Theme.UygulamaProje" />
+
+    <!-- Splash Screen Theme -->
+    <style name="Theme.SplashScreen" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+</resources>

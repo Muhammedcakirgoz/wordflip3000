@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@drawable/gradient_background">
+
+    <TextView
+        android:id="@+id/tvLevelTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_white"
+        android:text="A1 - Başlangıç" />
+
+    <TextView
+        android:id="@+id/tvLevelDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textColor="@color/text_white"
+        android:alpha="0.9"
+        android:text="Günlük ifadeler ve temel kelimeler." />
+
+    <TextView
+        android:id="@+id/tvDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp"
+        android:textColor="@color/text_white"
+        android:alpha="0.8"
+        android:text="Puanın: 24" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStartLearning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.UygulamaProje.Button.Success"
+            android:text="Bu seviyeden başla" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRetakeTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.UygulamaProje.Button.Secondary"
+            android:layout_marginTop="12dp"
+            android:text="Testi yeniden yap" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChooseLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.UygulamaProje.Button.Primary"
+            android:layout_marginTop="12dp"
+            android:text="Seviyeyi ben seçeyim" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+

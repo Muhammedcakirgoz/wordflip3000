@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Google Play Store yayını için güvenli network konfigürasyonu -->
+    <domain-config cleartextTrafficPermitted="false">
+        <!-- Sadece HTTPS trafiğine izin ver -->
+        <domain includeSubdomains="true">googleapis.com</domain>
+        <domain includeSubdomains="true">google.com</domain>
+    </domain-config>
+    
+    <!-- Genel güvenlik ayarları -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <!-- Sadece sistem sertifikalarına güven -->
+            <certificates src="system"/>
+        </trust-anchors>
+    </base-config>
+</network-security-config>

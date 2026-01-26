@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Gece Teması Ana Renkler -->
+    <color name="primary_blue">#5C6BC0</color>
+    <color name="primary_dark_blue">#3F51B5</color>
+    <color name="light_blue">#1A237E</color>
+    
+    <!-- Gece Gradient -->
+    <color name="gradient_start">#2C3E50</color>
+    <color name="gradient_end">#34495E</color>
+    
+    <!-- Gece Buton Renkleri -->
+    <color name="button_primary">#5C6BC0</color>
+    <color name="button_secondary">#F06292</color>
+    <color name="button_success">#66BB6A</color>
+    
+    <!-- Gece Arka Plan -->
+    <color name="background_light">#121212</color>
+    <color name="background_card">#1E1E1E</color>
+    <color name="card_back_tint">#2A1B3D</color>
+    
+    <!-- Gece Metin Renkleri -->
+    <color name="text_primary">#E0E0E0</color>
+    <color name="text_secondary">#BDBDBD</color>
+    <color name="text_white">#FFFFFF</color>
+</resources> 

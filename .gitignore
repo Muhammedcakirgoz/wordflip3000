@@ -1,0 +1,29 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Signing Keys (ÇOK ÖNEMLİ - GitHub'a yüklenmemeli!)
+*.jks
+*.keystore
+keystore.properties
+release-key.properties
+
+# API Keys ve Secrets
+secrets.properties
+google-services.json
+
+# OS specific
+.DS_Store
+Thumbs.db

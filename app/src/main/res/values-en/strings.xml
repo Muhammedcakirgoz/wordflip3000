@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">WordFlip 3000</string>
+    
+    <!-- Main Menu -->
+    <string name="main_title">WordFlip 3000</string>
+    <string name="start_learning">Start Learning</string>
+    <string name="progress">Progress</string>
+    <string name="settings">Settings</string>
+    
+    <!-- Level Selection -->
+    <string name="level_selection_title">Select Level</string>
+    <string name="level_a1">A1 - Beginner</string>
+    <string name="level_a2">A2 - Elementary</string>
+    <string name="level_b1">B1 - Intermediate</string>
+    <string name="level_b2">B2 - Upper Intermediate</string>
+    <string name="level_c1">C1 - Advanced</string>
+    
+    <!-- Card Learning -->
+    <string name="correct">I Know It</string>
+    <string name="wrong">I Don\'t Know</string>
+    <string name="card_word">apple</string>
+    <string name="check_answer">Check</string>
+    <string name="show_answer">Show Answer</string>
+    <string name="next_word">Next</string>
+    <string name="enter_translation">Enter Turkish translation</string>
+    <string name="correct_answer">Correct! Well done</string>
+    <string name="wrong_answer">Wrong. Correct answer:</string>
+    <string name="play_pronunciation">Listen to pronunciation</string>
+    <string name="tts_not_available">Text-to-speech feature is not available</string>
+    <string name="tts_initializing">Initializing text-to-speech...</string>
+    <string name="completion_title">Congratulations!</string>
+    <string name="completion_message">You have completed all words!</string>
+    <string name="completion_stats">Total: %1$d, Correct: %2$d, Wrong: %3$d</string>
+    <string name="completion_back">Main Menu</string>
+    
+    <!-- Progress -->
+    <string name="progress_title">Progress Status</string>
+    <string name="progress_count">You learned %1$d / %2$d words</string>
+    <string name="total_words">Total Words</string>
+    <string name="learned_words">Learned Words</string>
+    <string name="success_rate">Success Rate</string>
+    <string name="daily_goal">Daily Goal</string>
+    <string name="current_streak">Current Streak</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="audio_reading">Audio Reading</string>
+    <string name="audio_reading_desc">Read words aloud</string>
+    <string name="animation_speed">Animation Speed</string>
+    <string name="animation_speed_desc">Card flip animation speed</string>
+    <string name="speed_slow">Slow</string>
+    <string name="speed_fast">Fast</string>
+    <string name="theme">Theme</string>
+    <string name="theme_desc">Select app theme</string>
+    <string name="theme_light">Light Theme</string>
+    <string name="theme_dark">Dark Theme</string>
+    <string name="card_sorting">🔁 Card Sorting Order</string>
+    <string name="card_sorting_desc">Choose the order in which word cards are displayed</string>
+    <string name="sort_random">Random order</string>
+    <string name="sort_least_learned">Start with least learned words</string>
+    <string name="sort_recent_study">Sort by recently studied</string>
+    <string name="language_option">🌐 Language Option</string>
+    <string name="language_option_desc">Select app interface language</string>
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="daily_goal_title">Daily Goal</string>
+    <string name="daily_goal_desc">Number of words to learn per day</string>
+    <string name="data_reset">♻️ Data Reset / Clear</string>
+    <string name="data_reset_desc">Clear all learning progress</string>
+    <string name="reset_all_progress">Reset All Progress</string>
+    <string name="app_info">App Information</string>
+    <string name="app_version">WordFlip 3000 v1.0</string>
+    <string name="app_description">English vocabulary learning app</string>
+    
+    <!-- General -->
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
+    <string name="loading">Loading...</string>
+    
+    <!-- Toast Messages -->
+    <string name="audio_enabled">Audio reading enabled</string>
+    <string name="audio_disabled">Audio reading disabled</string>
+    <string name="theme_changed">Theme change will be applied</string>
+    <string name="language_changed">Language change will be applied</string>
+    <string name="sort_random_selected">Random sorting</string>
+    <string name="sort_least_learned_selected">Least learned words first</string>
+    <string name="sort_recent_study_selected">Recently studied first</string>
+    <string name="daily_goal_updated">Daily goal updated: %1$d words</string>
+    <string name="daily_goal_error">Please enter a number between 1-100</string>
+    <string name="daily_goal_dialog_title">Daily Goal</string>
+    <string name="daily_goal_dialog_message">How many words do you want to learn per day?</string>
+    <string name="reset_confirmation_title">⚠️ Reset All Data</string>
+    <string name="reset_confirmation_message">This action will permanently delete all your learning progress:\n\n• All learned words\n• Correct/wrong counts\n• Progress status\n• Statistics\n\nThis action cannot be undone. Are you sure you want to continue?</string>
+    <string name="reset_success">All data has been successfully reset</string>
+    <string name="reset_error">An error occurred while resetting data</string>
+    <string name="delete">Delete</string>
+    <string name="words_loaded_random">Words sorted randomly</string>
+    <string name="words_loaded_least_learned">Least learned words shown first</string>
+    <string name="words_loaded_recent_study">Recently studied words shown first</string>
+    <string name="no_words_found">No words found at this level</string>
+    <string name="level_loading">📚 Loading %1$s level...</string>
+    <string name="level_loaded">📚 %1$s level: %2$s</string>
+    
+    <!-- Content Descriptions -->
+    <string name="back_to_main">Back to Main Menu</string>
+    <string name="edit_goal">Edit Goal</string>
+</resources> 

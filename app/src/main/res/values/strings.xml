@@ -1,0 +1,111 @@
+<resources>
+    <string name="app_name">WordFlip 3000</string>
+    
+    <!-- Ana Menü -->
+    <string name="main_title">WordFlip 3000</string>
+    <string name="start_learning">Öğrenmeye Başla</string>
+    <string name="progress">İlerleme</string>
+    <string name="settings">Ayarlar</string>
+    
+    <!-- Seviye Seçimi -->
+    <string name="level_selection_title">Seviye Seçin</string>
+    <string name="level_a1">A1 - Başlangıç</string>
+    <string name="level_a2">A2 - Temel</string>
+    <string name="level_b1">B1 - Orta Alt</string>
+    <string name="level_b2">B2 - Orta Üst</string>
+    <string name="level_c1">C1 - İleri</string>
+    
+    <!-- Kart Öğrenme -->
+    <string name="correct">Doğru Bildim</string>
+    <string name="wrong">Bilemedim</string>
+    <string name="card_word">apple</string>
+    <string name="check_answer">Kontrol Et</string>
+    <string name="show_answer">Cevabı Göster</string>
+    <string name="next_word">Sonraki</string>
+    <string name="enter_translation">Türkçe karşılığını yazın</string>
+    <string name="correct_answer">Doğru! Tebrikler</string>
+    <string name="wrong_answer">Yanlış. Doğru cevap:</string>
+    <string name="play_pronunciation">Telaffuzu dinle</string>
+    <string name="tts_not_available">Sesli okuma özelliği kullanılamıyor</string>
+    <string name="tts_initializing">Sesli okuma hazırlanıyor...</string>
+    <string name="completion_title">Tebrikler!</string>
+    <string name="completion_message">Tüm kelimeleri tamamladınız!</string>
+    <string name="completion_stats">Toplam: %1$d, Doğru: %2$d, Yanlış: %3$d</string>
+    <string name="completion_back">Ana Menü</string>
+    
+    <!-- İlerleme -->
+    <string name="progress_title">İlerleme Durumu</string>
+    <string name="progress_count">%1$d / %2$d kelime öğrendin</string>
+    <string name="total_words">Toplam Kelime</string>
+    <string name="learned_words">Öğrenilen Kelime</string>
+    <string name="success_rate">Başarı Oranı</string>
+    <string name="daily_goal">Günlük Hedef</string>
+    <string name="current_streak">Mevcut Seri</string>
+    
+    <!-- Ayarlar -->
+    <string name="settings_title">Ayarlar</string>
+    <string name="audio_reading">Sesli Okuma</string>
+    <string name="audio_reading_desc">Kelimeleri sesli oku</string>
+    <string name="animation_speed">Animasyon Hızı</string>
+    <string name="animation_speed_desc">Kart çevirme animasyonunun hızı</string>
+    <string name="speed_slow">Yavaş</string>
+    <string name="speed_fast">Hızlı</string>
+    <string name="theme">Tema</string>
+    <string name="theme_desc">Uygulama temasını seçin</string>
+    <string name="theme_light">Açık Tema</string>
+    <string name="theme_dark">Koyu Tema</string>
+    <string name="card_sorting">🔁 Kartların Sıralama Şekli</string>
+    <string name="card_sorting_desc">Kelime kartlarının hangi sırayla gösterileceğini seçin</string>
+    <string name="sort_random">Rastgele sırala</string>
+    <string name="sort_least_learned">En az öğrenilen kelimelerden başla</string>
+    <string name="sort_recent_study">En son çalışılanlara göre sırala</string>
+    <string name="language_option">🌐 Dil Seçeneği</string>
+    <string name="language_option_desc">Uygulama arayüz dilini seçin</string>
+    <string name="language_turkish">Türkçe</string>
+    <string name="language_english">English</string>
+    <string name="daily_goal_title">Günlük Hedef</string>
+    <string name="daily_goal_desc">Günde öğrenilecek kelime sayısı</string>
+    <string name="data_reset">♻️ Veri Sıfırlama / Temizleme</string>
+    <string name="data_reset_desc">Tüm öğrenme geçmişini temizle</string>
+    <string name="reset_all_progress">Tüm İlerlemeyi Sıfırla</string>
+    <string name="app_info">Uygulama Bilgileri</string>
+    <string name="app_version">WordFlip 3000 v1.0</string>
+    <string name="app_description">İngilizce kelime öğrenme uygulaması</string>
+    
+    <!-- Genel -->
+    <string name="back">Geri</string>
+    <string name="save">Kaydet</string>
+    <string name="cancel">İptal</string>
+    <string name="ok">Tamam</string>
+    <string name="loading">Yükleniyor...</string>
+    
+    <!-- Toast Mesajları -->
+    <string name="audio_enabled">Sesli okuma açık</string>
+    <string name="audio_disabled">Sesli okuma kapalı</string>
+    <string name="theme_changed">Tema değişikliği uygulanacak</string>
+    <string name="language_changed">Dil değişikliği uygulanacak</string>
+    <string name="sort_random_selected">Rastgele sıralama</string>
+    <string name="sort_least_learned_selected">En az öğrenilen kelimeler önce</string>
+    <string name="sort_recent_study_selected">En son çalışılanlar önce</string>
+    <string name="daily_goal_updated">Günlük hedef güncellendi: %1$d kelime</string>
+    <string name="daily_goal_error">Lütfen 1-100 arasında bir sayı girin</string>
+    <string name="daily_goal_dialog_title">Günlük Hedef</string>
+    <string name="daily_goal_dialog_message">Günde kaç kelime öğrenmek istiyorsunuz?</string>
+    <string name="reset_confirmation_title">⚠️ Tüm Veriyi Sıfırla</string>
+    <string name="reset_confirmation_message">Bu işlem tüm öğrenme geçmişinizi kalıcı olarak silecek:\n\n• Öğrenilen tüm kelimeler\n• Doğru/yanlış sayıları\n• İlerleme durumları\n• İstatistikler\n\nBu işlem geri alınamaz. Devam etmek istediğinizden emin misiniz?</string>
+    <string name="reset_success">Tüm veriler başarıyla sıfırlandı</string>
+    <string name="reset_error">Veri sıfırlama sırasında hata oluştu</string>
+    <string name="delete">Sil</string>
+    <string name="words_loaded_random">Kelimeler rastgele sıralandı</string>
+    <string name="words_loaded_least_learned">En az öğrenilen kelimeler önce gösteriliyor</string>
+    <string name="words_loaded_recent_study">En son çalışılan kelimeler önce gösteriliyor</string>
+    <string name="words_loaded_adaptive">Adaptif tekrar (SM-2) sırasına göre seçildi</string>
+    <string name="no_words_found">Bu seviyede kelime bulunamadı</string>
+    <string name="level_loading">📚 %1$s seviyesi yükleniyor...</string>
+    <string name="level_loaded">📚 %1$s seviyesi: %2$s</string>
+    <string name="level_test_score_info">Puanın: %1$d</string>
+    
+    <!-- Content Descriptions -->
+    <string name="back_to_main">Ana Menüye Dön</string>
+    <string name="edit_goal">Hedef Düzenle</string>
+</resources>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Geri Butonu -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Ana Menüye Dön"
+            android:padding="12dp"
+            android:scaleType="fitCenter" />
+
+    </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:background="?android:attr/colorBackground">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="?attr/colorSurface">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center_horizontal">
+
+                <!-- FRONT: Soru yüzü -->
+                <LinearLayout
+                    android:id="@+id/frontLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Seviye ve Kategori Bilgisi -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:id="@+id/tvLevel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="A1"
+                            android:textSize="12sp"
+                            android:textColor="#FFFFFF"
+                            android:background="@drawable/level_badge"
+                            android:padding="6dp"
+                            android:layout_marginEnd="8dp" />
+
+                        <TextView
+                            android:id="@+id/tvCategory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="NOUN"
+                            android:textSize="12sp"
+                            android:textColor="?attr/colorOnSurface"
+                            android:background="@drawable/category_badge"
+                            android:padding="6dp" />
+
+                    </LinearLayout>
+
+                    <!-- İngilizce Kelime ve Ses Butonu -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/tvCardTextEnglish"
+                            android:text="apple"
+                            android:textSize="36sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorPrimary"
+                            android:gravity="center"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <ImageButton
+                            android:id="@+id/btnPlaySound"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_volume_up"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="@string/play_pronunciation"
+                            android:padding="8dp"
+                            android:layout_marginStart="8dp" />
+
+                    </LinearLayout>
+
+                    <!-- Fonetik -->
+                    <TextView
+                        android:id="@+id/tvPhonetic"
+                        android:text="/ˈæpəl/"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorSecondary"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp" />
+
+                    <!-- Çeviri Input Alanı -->
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        app:boxStrokeColor="?attr/colorPrimary"
+                        app:hintTextColor="?attr/colorPrimary">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etTranslation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Türkçe çevirisini yazın"
+                            android:textSize="16sp"
+                            android:textColor="?attr/colorOnSurface"
+                            android:imeOptions="actionDone"
+                            android:inputType="text" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <!-- Butonlar -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/btnCheck"
+                            android:text="Kontrol Et"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:backgroundTint="?attr/colorPrimary"
+                            android:textColor="?attr/colorOnPrimary" />
+
+                        <Button
+                            android:id="@+id/btnShowAnswer"
+                            android:text="Cevabı Göster"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:backgroundTint="?attr/colorSecondary"
+                            android:textColor="?attr/colorOnSecondary" />
+
+                        <Button
+                            android:id="@+id/btnTranslate"
+                            android:text="Çevir"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:backgroundTint="@color/button_success"
+                            android:textColor="@color/text_white" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- BACK: Cevap yüzü -->
+                <LinearLayout
+                    android:id="@+id/resultLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="0dp"
+                    android:background="@color/card_back_tint"
+                    android:padding="16dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Doğru!"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:background="@drawable/result_background_correct"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/tvCorrectAnswer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Doğru cevap: elma"
+                        android:textSize="16sp"
+                        android:gravity="center"
+                        android:textColor="?attr/colorOnSurface"
+                        android:layout_marginBottom="16dp"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnNext"
+                        android:text="Sonraki Kelime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="?attr/colorSecondary"
+                        android:textColor="?attr/colorOnSecondary" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- İstatistik Bilgisi -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/stats_background"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tvStats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doğru: 5 | Yanlış: 2 | Kalan: 23"
+                android:textSize="14sp"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
