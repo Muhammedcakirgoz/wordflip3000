@@ -27,3 +27,19 @@ google-services.json
 # OS specific
 .DS_Store
 Thumbs.db
+play-console-fastlane-499509-cee6539d74ad.json
+
+# Derleme çıktıları (APK/AAB repoya girmez)
+app/release/
+*.apk
+*.aab
+.kotlin/
+
+# IDE yerel ayar dosyaları
+/.idea/planningMode.xml
+/.idea/markdown.xml
+/.idea/workspace.xml
+
+# Fastlane (Ruby bağımlılık cache'i ve loglar)
+vendor/
+fastlane/report.xml

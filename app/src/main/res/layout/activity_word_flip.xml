@@ -2,19 +2,42 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background">
 
+    <!-- Header -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔄 Kelime Kartı"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_white" />
+
+    </LinearLayout>
+
+    <!-- Kart -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="300dp"
-        android:layout_height="400dp"
+        android:layout_width="320dp"
+        android:layout_height="420dp"
         app:layout_constraintBottom_toTopOf="@+id/showAnswerButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        app:layout_constraintVertical_bias="0.35"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="16dp">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -27,23 +50,38 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:padding="16dp">
+                android:padding="24dp"
+                android:background="@drawable/card_flip_front">
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="4dp"
+                    android:background="#40FFFFFF"
+                    android:layout_marginBottom="32dp" />
 
                 <TextView
                     android:id="@+id/wordEnglish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
+                    android:textSize="32sp"
                     android:textStyle="bold"
+                    android:textColor="@color/text_white"
                     android:gravity="center"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="(Çevirmek için dokun)"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="20dp"
                     android:textSize="14sp"
-                    android:textColor="@android:color/darker_gray"/>
+                    android:textColor="#B0FFFFFF"/>
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="4dp"
+                    android:background="#40FFFFFF"
+                    android:layout_marginTop="32dp" />
+
             </LinearLayout>
 
             <!-- Arka Yüz -->
@@ -53,43 +91,62 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:padding="16dp"
+                android:padding="24dp"
+                android:background="@drawable/card_flip_back"
                 android:visibility="gone">
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="4dp"
+                    android:background="#40FFFFFF"
+                    android:layout_marginBottom="32dp" />
 
                 <TextView
                     android:id="@+id/wordTurkish"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="24sp"
+                    android:textSize="32sp"
                     android:textStyle="bold"
+                    android:textColor="@color/text_white"
                     android:gravity="center"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="(Çevirmek için dokun)"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="20dp"
                     android:textSize="14sp"
-                    android:textColor="@android:color/darker_gray"/>
+                    android:textColor="#B0FFFFFF"/>
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="4dp"
+                    android:background="#40FFFFFF"
+                    android:layout_marginTop="32dp" />
+
             </LinearLayout>
 
         </FrameLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/showAnswerButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cevabı Göster"
         android:layout_marginTop="32dp"
-        android:paddingHorizontal="32dp"
-        android:paddingVertical="12dp"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="14dp"
         android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="24dp"
+        app:backgroundTint="@color/text_white"
+        android:textColor="@color/gradient_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
         app:layout_constraintVertical_bias="0.3" />
 
-</androidx.constraintlayout.widget.ConstraintLayout> 
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,11 +8,19 @@
     android:padding="24dp"
     android:background="@drawable/gradient_background">
 
+    <!-- Başarı Emojisi -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🎉"
+        android:textSize="64sp"
+        android:layout_marginBottom="16dp" />
+
     <TextView
         android:id="@+id/tvLevelTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="28sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:textColor="@color/text_white"
         android:text="A1 - Başlangıç" />
@@ -21,26 +29,47 @@
         android:id="@+id/tvLevelDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:textSize="16sp"
         android:textColor="@color/text_white"
         android:alpha="0.9"
+        android:gravity="center"
         android:text="Günlük ifadeler ve temel kelimeler." />
 
-    <TextView
-        android:id="@+id/tvDetails"
-        android:layout_width="wrap_content"
+    <!-- Skor Kartı -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textSize="14sp"
-        android:textColor="@color/text_white"
-        android:alpha="0.8"
-        android:text="Puanın: 24" />
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:text="Puanın: 24" />
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:orientation="vertical">
 
         <com.google.android.material.button.MaterialButton
@@ -48,7 +77,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.UygulamaProje.Button.Success"
-            android:text="Bu seviyeden başla" />
+            android:text="Bu seviyeden başla"
+            app:cornerRadius="20dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRetakeTest"
@@ -56,7 +86,8 @@
             android:layout_height="wrap_content"
             style="@style/Widget.UygulamaProje.Button.Secondary"
             android:layout_marginTop="12dp"
-            android:text="Testi yeniden yap" />
+            android:text="Testi yeniden yap"
+            app:cornerRadius="20dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnChooseLevel"
@@ -64,10 +95,9 @@
             android:layout_height="wrap_content"
             style="@style/Widget.UygulamaProje.Button.Primary"
             android:layout_marginTop="12dp"
-            android:text="Seviyeyi ben seçeyim" />
+            android:text="Seviyeyi ben seçeyim"
+            app:cornerRadius="20dp" />
 
     </LinearLayout>
 
 </LinearLayout>
-
-

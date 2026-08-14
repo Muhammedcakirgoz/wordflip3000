@@ -219,7 +219,7 @@ Her doğru cevap aralığı uzatır, yanlış cevap sıfırlar.
 
 ```json
 {
-  "word": "example",
+  "word": "wordflip",
   "translation": "örnek",
   "level": "A1",
   "category": "Daily"

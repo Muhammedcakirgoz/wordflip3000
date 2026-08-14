@@ -10,8 +10,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:fillViewport="true"
+        android:scrollbars="none"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,9 +29,11 @@
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp"
-                style="@style/Widget.UygulamaProje.Card"
-                app:cardBackgroundColor="?attr/colorSurface">
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="12dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:strokeWidth="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -39,15 +42,25 @@
                     android:padding="32dp"
                     android:gravity="center">
 
-                    <!-- Logo Icon -->
+                    <!-- Logo Icon with Circle Background -->
+                    <FrameLayout
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginBottom="16dp">
 
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginBottom="16dp"
-                        android:padding="4dp"
-                        android:src="@mipmap/ic_launcher"
-                        tools:srcCompat="@mipmap/ic_launcher" />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/icon_circle_background" />
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:src="@mipmap/ic_launcher"
+                            tools:srcCompat="@mipmap/ic_launcher" />
+
+                    </FrameLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -56,7 +69,8 @@
                         android:textSize="32sp"
                         android:textStyle="bold"
                         android:textColor="@color/text_primary"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:letterSpacing="0.05" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -71,141 +85,157 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Ana Eylemler Kartı (Grid) -->
-            <com.google.android.material.card.MaterialCardView
+            <!-- Ana Eylemler - Grid -->
+            <!-- Grid Satır 1: Başla + Günlük Görevler -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/Widget.UygulamaProje.Card"
-                app:cardBackgroundColor="?attr/colorSurface">
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <!-- Öğrenmeye Başla Kartı -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardStartLearning"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="8dp"
+                    app:strokeWidth="0dp"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/card_grid_start"
+                        android:padding="20dp"
+                        android:gravity="center">
+
+                        <FrameLayout
+                            android:layout_width="56dp"
+                            android:layout_height="56dp">
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/icon_circle_background" />
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_book_sparkle"
+                                android:contentDescription="Öğrenmeye Başla"
+                                app:tint="@color/text_white" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kelime Öğrenmeye Başla"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_white"
+                            android:textSize="14sp"
+                            android:gravity="center"
+                            android:layout_marginTop="12dp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Günlük Görevler Kartı -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardDailyChallenge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="8dp"
+                    app:strokeWidth="0dp"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/card_grid_daily"
+                        android:padding="20dp"
+                        android:gravity="center">
+
+                        <FrameLayout
+                            android:layout_width="56dp"
+                            android:layout_height="56dp">
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@drawable/icon_circle_background" />
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_trophy_star"
+                                android:contentDescription="Günlük Görevler"
+                                app:tint="@color/text_white" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Günlük Görevler"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_white"
+                            android:textSize="14sp"
+                            android:gravity="center"
+                            android:layout_marginTop="12dp" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Grid Satır 2: Çıkış (tam genişlik) -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardExit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:strokeWidth="0dp"
+                android:foreground="?attr/selectableItemBackground">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="horizontal"
+                    android:background="@drawable/card_grid_exit"
+                    android:padding="20dp"
+                    android:gravity="center">
 
-                    <!-- Grid Satır 1: Başla + Günlük Görevler -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="12dp">
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/cardStartLearning"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="8dp"
-                            app:cardCornerRadius="16dp"
-                            app:cardElevation="4dp"
-                            app:cardBackgroundColor="@color/card_grid_purple"
-                            android:foreground="?attr/selectableItemBackground">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="20dp"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="48dp"
-                                    android:layout_height="48dp"
-                                    android:src="@drawable/ic_book_sparkle"
-                                    android:contentDescription="Öğrenmeye Başla"
-                                    app:tint="@color/text_white" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Kelime Öğrenmeye Başla"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/text_white"
-                                    android:textSize="14sp"
-                                    android:gravity="center"
-                                    android:layout_marginTop="12dp" />
-
-                            </LinearLayout>
-                        </com.google.android.material.card.MaterialCardView>
-
-                        <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/cardDailyChallenge"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:layout_marginStart="8dp"
-                            app:cardCornerRadius="16dp"
-                            app:cardElevation="4dp"
-                            app:cardBackgroundColor="@color/card_grid_purple"
-                            android:foreground="?attr/selectableItemBackground">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="vertical"
-                                android:padding="20dp"
-                                android:gravity="center">
-
-                                <ImageView
-                                    android:layout_width="48dp"
-                                    android:layout_height="48dp"
-                                    android:src="@drawable/ic_trophy_star"
-                                    android:contentDescription="Günlük Görevler"
-                                    app:tint="@color/text_white" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Günlük Görevler"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/text_white"
-                                    android:textSize="14sp"
-                                    android:gravity="center"
-                                    android:layout_marginTop="12dp" />
-
-                            </LinearLayout>
-                        </com.google.android.material.card.MaterialCardView>
-                    </LinearLayout>
-
-                    <!-- Grid Satır 2: Çıkış (tam genişlik) -->
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/cardExit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="16dp"
-                        app:cardElevation="4dp"
-                        app:cardBackgroundColor="@color/card_grid_purple"
-                        android:foreground="?attr/selectableItemBackground">
-
-                        <LinearLayout
+                    <FrameLayout
+                        android:layout_width="48dp"
+                        android:layout_height="48dp">
+                        <View
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="20dp"
-                            android:gravity="center">
+                            android:layout_height="match_parent"
+                            android:background="@drawable/icon_circle_background" />
+                        <ImageView
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_exit"
+                            android:contentDescription="Çıkış"
+                            app:tint="@color/text_white" />
+                    </FrameLayout>
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:src="@drawable/ic_exit"
-                                android:contentDescription="Çıkış"
-                                app:tint="@color/text_white" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Çıkış"
-                                android:textStyle="bold"
-                                android:textColor="@color/text_white"
-                                android:textSize="16sp"
-                                android:layout_marginStart="12dp" />
-
-                        </LinearLayout>
-                    </com.google.android.material.card.MaterialCardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Çıkış"
+                        android:textStyle="bold"
+                        android:textColor="@color/text_white"
+                        android:textSize="16sp"
+                        android:layout_marginStart="12dp" />
 
                 </LinearLayout>
-
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Alt Bilgi -->

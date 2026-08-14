@@ -28,7 +28,7 @@
 -keep public class * extends android.content.ContentProvider
 
 # Veritabanı sınıflarını koru (reflection kullanımı için)
--keep class com.example.learning.database.** { *; }
+-keep class com.wordflip.learning.database.** { *; }
 
 # ML Kit çeviri için gerekli
 -keep class com.google.mlkit.** { *; }
@@ -58,3 +58,24 @@
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }
+
+# ========== RETROFIT / OKHTTP / KOTLINX.SERIALIZATION ==========
+
+# Retrofit: generic imzalar reflection ile okunur
+-keepattributes Signature, InnerClasses, EnclosingMethod, *Annotation*
+-keepclassmembers,allowshrinking,allowobfuscation interface * {
+    @retrofit2.http.* <methods>;
+}
+-dontwarn okhttp3.**
+-dontwarn okio.**
+-dontwarn retrofit2.**
+-dontwarn javax.annotation.**
+
+# kotlinx.serialization: @Serializable sınıfların serializer'larını koru
+-keepclassmembers class com.wordflip.learning.translate.** {
+    *** Companion;
+}
+-keepclasseswithmembers class com.wordflip.learning.translate.** {
+    kotlinx.serialization.KSerializer serializer(...);
+}
+-keep,includedescriptorclasses class com.wordflip.learning.translate.**$$serializer { *; }

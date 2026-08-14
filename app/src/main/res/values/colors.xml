@@ -43,4 +43,51 @@
     
     <!-- Card Grid Purple (from user shared color) -->
     <color name="card_grid_purple">#6F4FB3</color>
+
+    <!-- === YENİ RENKLER - Seviye Kartları === -->
+    <!-- A1 - Yeşil/Teal -->
+    <color name="level_a1_start">#43E97B</color>
+    <color name="level_a1_end">#38F9D7</color>
+    <!-- A2 - Mavi -->
+    <color name="level_a2_start">#4facfe</color>
+    <color name="level_a2_end">#00f2fe</color>
+    <!-- B1 - Turuncu/Sarı -->
+    <color name="level_b1_start">#f093fb</color>
+    <color name="level_b1_end">#f5576c</color>
+    <!-- B2 - Kırmızı/Pembe -->
+    <color name="level_b2_start">#FF6B6B</color>
+    <color name="level_b2_end">#ee5a6f</color>
+    <!-- C1 - Mor/İndigo -->
+    <color name="level_c1_start">#a18cd1</color>
+    <color name="level_c1_end">#fbc2eb</color>
+    <!-- Test - Altın -->
+    <color name="level_test_start">#f6d365</color>
+    <color name="level_test_end">#fda085</color>
+
+    <!-- Ana Ekran Grid Kart Renkleri -->
+    <color name="card_start_learning_start">#667eea</color>
+    <color name="card_start_learning_end">#764ba2</color>
+    <color name="card_daily_challenge_start">#f093fb</color>
+    <color name="card_daily_challenge_end">#f5576c</color>
+    <color name="card_exit_start">#868f96</color>
+    <color name="card_exit_end">#596164</color>
+
+    <!-- Word Flip Kart Renkleri -->
+    <color name="flip_front_start">#667eea</color>
+    <color name="flip_front_end">#764ba2</color>
+    <color name="flip_back_start">#f093fb</color>
+    <color name="flip_back_end">#f5576c</color>
+
+    <!-- Test Seçenek Arka Plan -->
+    <color name="test_option_bg">#F3F0FF</color>
+    <color name="test_option_stroke">#D1C4E9</color>
+    <color name="test_option_selected">#EDE7F6</color>
+
+    <!-- Shimmer / Highlight -->
+    <color name="shimmer_highlight">#33FFFFFF</color>
+
+    <!-- İkon Daire Arka Plan -->
+    <color name="icon_bg_blue">#E8EAF6</color>
+    <color name="icon_bg_orange">#FFF3E0</color>
+    <color name="icon_bg_green">#E8F5E9</color>
 </resources>

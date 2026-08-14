@@ -1,0 +1,23 @@
+default_platform(:android)
+
+platform :android do
+  desc "Uygulamayı derler ve Play Store Kapalı Test (Alpha) kanalına yükler"
+  lane :deploy_closed_test do
+    
+    # 1. Projeyi temizle ve Release varyantında AAB (App Bundle) oluştur
+    gradle(
+      task: "clean bundle",
+      build_type: "Release"
+    )
+
+    # 2. Oluşturulan AAB dosyasını Play Store'a yükle
+    upload_to_play_store(
+      track: 'alpha', 
+      aab: 'app/build/outputs/bundle/release/app-release.aab',
+      skip_upload_apk: true,
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
+  end
+end

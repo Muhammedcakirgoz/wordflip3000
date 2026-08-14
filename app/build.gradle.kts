@@ -1,20 +1,52 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.serialization)
 }
 
-android {
-    namespace = "com.example.learning"
-    compileSdk = 35
+// LibreTranslate ayarları local.properties'ten okunur; dosya git'e girmediği için
+// API anahtarı koda gömülmez. Anahtar yoksa boş string ile (self-host senaryosu) devam eder.
+val localProperties = Properties().apply {
+    val file = rootProject.file("local.properties")
+    if (file.exists()) file.inputStream().use { load(it) }
+}
+val libreTranslateBaseUrl: String =
+    localProperties.getProperty("libretranslate.baseUrl") ?: "https://libretranslate.com/"
+val libreTranslateApiKey: String =
+    localProperties.getProperty("libretranslate.apiKey") ?: ""
 
+android {
+    namespace = "com.wordflip.learning"
+    compileSdk = 36
+
+    signingConfigs {
+        create("release") {
+            // İmza bilgileri local.properties'ten okunur; dosya git'e girmediği için
+            // şifreler repoya sızmaz. .jks dosyası app klasöründeyse sadece adı yeterli.
+            storeFile = file(localProperties.getProperty("signing.storeFile") ?: "wordflip-release.jks")
+            storePassword = localProperties.getProperty("signing.storePassword") ?: ""
+            keyAlias = localProperties.getProperty("signing.keyAlias") ?: ""
+            keyPassword = localProperties.getProperty("signing.keyPassword") ?: ""
+        }
+    }
     defaultConfig {
-        applicationId = "com.example.learning"
+        applicationId = "com.wordflip.learning"
         minSdk = 29
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0.0"
+        targetSdk = 36
+        versionCode = 3
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "LIBRETRANSLATE_BASE_URL", "\"$libreTranslateBaseUrl\"")
+        buildConfigField("String", "LIBRETRANSLATE_API_KEY", "\"$libreTranslateApiKey\"")
+    }
+
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
     }
     
     // Split APKs'i devre dışı bırak - Tek universal APK oluştur
@@ -33,7 +65,10 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            
+            signingConfig = signingConfigs.getByName("release")
+
+
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             // Güvenlik: Debug bilgilerini kaldır
             isDebuggable = false
             isJniDebuggable = false
@@ -47,8 +82,8 @@ android {
         }
         debug {
             // Debug modunda güvenlik ayarları
-            isMinifyEnabled = false
-            isDebuggable = true
+
+
             
             // Debug: Tüm mimarileri destekle (emulator ve gerçek cihaz için)
             // x86_64: Android Emulator
@@ -75,6 +110,15 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.mlkit.translate)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.kotlinx.serialization)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

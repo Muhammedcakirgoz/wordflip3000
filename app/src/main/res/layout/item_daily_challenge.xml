@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cardChallenge"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="16dp"
-    app:cardCornerRadius="16dp"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="20dp"
     app:cardElevation="6dp"
-    android:background="@drawable/card_background">
+    app:cardBackgroundColor="?attr/colorSurface"
+    app:strokeWidth="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,12 +18,24 @@
         android:gravity="center_vertical">
 
         <!-- Challenge Icon/Status -->
-        <ImageView
-            android:id="@+id/ivChallengeStatus"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@android:drawable/checkbox_off_background"
-            android:layout_marginEnd="16dp" />
+        <FrameLayout
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="16dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/icon_circle_background" />
+
+            <ImageView
+                android:id="@+id/ivChallengeStatus"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/checkbox_off_background" />
+
+        </FrameLayout>
 
         <!-- Challenge Content -->
         <LinearLayout
@@ -55,17 +68,18 @@
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="10dp"
                 android:progress="3"
                 android:max="10"
-                android:progressTint="@color/button_success" />
+                android:progressTint="@color/button_success"
+                android:progressBackgroundTint="@color/light_blue" />
 
             <!-- Progress Text -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="4dp">
+                android:layout_marginTop="6dp">
 
                 <TextView
                     android:id="@+id/tvChallengeProgress"
@@ -92,4 +106,4 @@
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView> 
+</com.google.android.material.card.MaterialCardView>

@@ -67,7 +67,7 @@
 2. **Tüm .kt dosyalarında package değiştir**:
    ```kotlin
    // ESKI
-   package com.example.learning
+   package com.wordflip.learning
    
    // YENİ
    package com.wordflip.learning

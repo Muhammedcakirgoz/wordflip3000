@@ -313,7 +313,7 @@ git push
 ### Belirli Dosyaları Push Etme
 
 ```bash
-git add app/src/main/java/com/example/learning/MainActivity.kt
+git add app/src/main/java/com/wordflip/learning/MainActivity.kt
 git commit -m "fix: Ana menü düzeltildi"
 git push
 ```

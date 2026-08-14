@@ -1,0 +1,2 @@
+json_key_file("play-console-fastlane-499509-cee6539d74ad.json") # Path to the json secret file - Follow https://docs.fastlane.tools/actions/supply/#setup to get one
+package_name("com.wordflip.learning") # e.g. com.krausefx.app
