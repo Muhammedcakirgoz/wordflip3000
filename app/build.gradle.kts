@@ -73,7 +73,6 @@ android {
             // Güvenlik: Debug bilgilerini kaldır
             isDebuggable = false
             isJniDebuggable = false
-            isRenderscriptDebuggable = false
             isPseudoLocalesEnabled = false
             
             // Güvenlik: Sadece gerçek cihazlar için ARM mimarileri (APK boyutunu küçültür)
