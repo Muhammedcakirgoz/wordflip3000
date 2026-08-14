@@ -14,6 +14,9 @@ object TranslateNetwork {
     private val json = Json {
         ignoreUnknownKeys = true
         coerceInputValues = true
+        // source/format/api_key default değerlerinde de gövdeye yazılsın;
+        // LibreTranslate bu alanları bekliyor.
+        encodeDefaults = true
     }
 
     private val okHttpClient = OkHttpClient.Builder()

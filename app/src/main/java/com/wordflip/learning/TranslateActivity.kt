@@ -1,72 +1,88 @@
 package com.wordflip.learning
 
+import com.wordflip.learning.R
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import androidx.activity.viewModels
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import android.widget.Toast
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
-import com.wordflip.learning.databinding.ActivityTranslateBinding
-import com.wordflip.learning.translate.Language
-import com.wordflip.learning.translate.TranslateViewModel
-import kotlinx.coroutines.launch
+import com.google.mlkit.nl.translate.TranslateLanguage
+import com.google.mlkit.nl.translate.Translation
+import com.google.mlkit.nl.translate.Translator
+import com.google.mlkit.nl.translate.TranslatorOptions
 
 class TranslateActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityTranslateBinding
-    private val viewModel: TranslateViewModel by viewModels()
-
-    private var languages: List<Language> = emptyList()
-    private var selectedTarget: String = "en"
+    private var enTr: Translator? = null
+    private var trEn: Translator? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTranslateBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_translate)
 
-        binding.btnBack.setOnClickListener { finish() }
+        val etSource = findViewById<EditText>(R.id.etSource)
+        val tvResult = findViewById<TextView>(R.id.tvResult)
+        val btnEnTr = findViewById<Button>(R.id.btnEnTr)
+        val btnTrEn = findViewById<Button>(R.id.btnTrEn)
+        findViewById<ImageButton>(R.id.btnBack).setOnClickListener { finish() }
 
-        binding.actTargetLang.setOnItemClickListener { _, _, position, _ ->
-            selectedTarget = languages[position].code
-        }
-
-        binding.btnTranslate.setOnClickListener {
-            viewModel.translate(
-                text = binding.etSource.text?.toString().orEmpty(),
-                target = selectedTarget,
-            )
-        }
-
-        lifecycleScope.launch {
-            repeatOnLifecycle(Lifecycle.State.STARTED) {
-                viewModel.uiState.collect { state ->
-                    binding.progressTranslate.isVisible = state.isLoading
-                    binding.btnTranslate.isEnabled = !state.isLoading
-
-                    if (state.languages != languages) {
-                        languages = state.languages
-                        bindLanguageDropdown(state.languages)
-                    }
-
-                    binding.tvResult.text = state.errorMessage ?: state.result
+        btnEnTr.setOnClickListener {
+            val text = etSource.text.toString().trim()
+            if (text.isEmpty()) return@setOnClickListener
+            val t = getEnTr()
+            btnEnTr.isEnabled = false
+            t.downloadModelIfNeeded()
+                .addOnSuccessListener {
+                    t.translate(text)
+                        .addOnSuccessListener { out -> tvResult.text = out }
+                        .addOnFailureListener { Toast.makeText(this, "Çeviri başarısız", Toast.LENGTH_SHORT).show() }
+                        .addOnCompleteListener { btnEnTr.isEnabled = true }
                 }
-            }
+                .addOnFailureListener { btnEnTr.isEnabled = true }
+        }
+
+        btnTrEn.setOnClickListener {
+            val text = etSource.text.toString().trim()
+            if (text.isEmpty()) return@setOnClickListener
+            val t = getTrEn()
+            btnTrEn.isEnabled = false
+            t.downloadModelIfNeeded()
+                .addOnSuccessListener {
+                    t.translate(text)
+                        .addOnSuccessListener { out -> tvResult.text = out }
+                        .addOnFailureListener { Toast.makeText(this, "Çeviri başarısız", Toast.LENGTH_SHORT).show() }
+                        .addOnCompleteListener { btnTrEn.isEnabled = true }
+                }
+                .addOnFailureListener { btnTrEn.isEnabled = true }
         }
     }
 
-    private fun bindLanguageDropdown(languages: List<Language>) {
-        val adapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_list_item_1,
-            languages.map { "${it.name} (${it.code})" },
-        )
-        binding.actTargetLang.setAdapter(adapter)
+    private fun getEnTr(): Translator {
+        if (enTr == null) {
+            val options = TranslatorOptions.Builder()
+                .setSourceLanguage(TranslateLanguage.ENGLISH)
+                .setTargetLanguage(TranslateLanguage.TURKISH)
+                .build()
+            enTr = Translation.getClient(options)
+        }
+        return enTr!!
+    }
 
-        // Mevcut seçim yeni listede de varsa koru, yoksa ilk dile dön.
-        val selected = languages.firstOrNull { it.code == selectedTarget } ?: languages.first()
-        selectedTarget = selected.code
-        binding.actTargetLang.setText("${selected.name} (${selected.code})", false)
+    private fun getTrEn(): Translator {
+        if (trEn == null) {
+            val options = TranslatorOptions.Builder()
+                .setSourceLanguage(TranslateLanguage.TURKISH)
+                .setTargetLanguage(TranslateLanguage.ENGLISH)
+                .build()
+            trEn = Translation.getClient(options)
+        }
+        return trEn!!
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        try { enTr?.close() } catch (_: Exception) {}
+        try { trEn?.close() } catch (_: Exception) {}
     }
 }

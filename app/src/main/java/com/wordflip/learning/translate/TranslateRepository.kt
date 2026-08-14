@@ -9,6 +9,10 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.SerializationException
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.JsonPrimitive
+import kotlinx.serialization.json.contentOrNull
 import retrofit2.HttpException
 
 /** Kullanıcıya gösterilebilir Türkçe mesaj taşıyan tek hata tipi. */
@@ -67,7 +71,7 @@ class TranslateRepository(
                 "İstek zaman aşımına uğradı. Bağlantınızı kontrol edip tekrar deneyin."
             is UnknownHostException ->
                 "Sunucuya ulaşılamadı. İnternet bağlantınızı kontrol edin."
-            is HttpException -> when (code()) {
+            is HttpException -> serverErrorMessage() ?: when (code()) {
                 400 -> "Geçersiz istek. Dil seçimini kontrol edin."
                 401, 403 -> "API anahtarı eksik veya geçersiz."
                 429 -> "Çok fazla istek gönderildi. Lütfen biraz bekleyip tekrar deneyin."
@@ -82,6 +86,16 @@ class TranslateRepository(
                 "Bilinmeyen bir hata oluştu."
         }
         return TranslateException(message, this)
+    }
+
+    // LibreTranslate hataları {"error":"..."} gövdesiyle döner; varsa onu göster.
+    private fun HttpException.serverErrorMessage(): String? = try {
+        response()?.errorBody()?.string()
+            ?.let { Json { ignoreUnknownKeys = true }.parseToJsonElement(it) }
+            ?.let { (it as? JsonObject)?.get("error") as? JsonPrimitive }
+            ?.contentOrNull
+    } catch (_: Exception) {
+        null
     }
 
     private companion object {

@@ -80,41 +80,29 @@
                     android:textColor="?attr/colorOnBackground" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilTargetLang"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:hint="Hedef dil"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp">
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
 
-                <AutoCompleteTextView
-                    android:id="@+id/actTargetLang"
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/btnEnTr"
+                    style="@style/Widget.UygulamaProje.Button.Primary"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:textColor="?attr/colorOnBackground" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_weight="1"
+                    android:text="EN → TR" />
 
-            <Button
-                android:id="@+id/btnTranslate"
-                style="@style/Widget.UygulamaProje.Button.Primary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Çevir" />
-
-            <ProgressBar
-                android:id="@+id/progressTranslate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="8dp"
-                android:visibility="gone" />
+                <Button
+                    android:id="@+id/btnTrEn"
+                    style="@style/Widget.UygulamaProje.Button.Secondary"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="TR → EN" />
+            </LinearLayout>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
